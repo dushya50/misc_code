@@ -1,0 +1,23 @@
+check which branch you are on : git branch
+change to a different branch : git checkout -b branchname
+if pull shows error "refusing to merge unrelated histories" then do: git pull --allow-unrelated-histories  origin main #assuming you are pulling to main branch
+to add a new remote: git remote add origin2 git@github.com:User/UserRepo.git
+to set up origin url: git remote set-url origin https://your_token@github.com/username/repositoryname.git
+set up global username and email: git config --global user.name "Your Name Here"
+git config --global user.email your@email.example
+
+In order to set up local username and email go to the directory of your repo and do: 
+git config user.name "Your Name Here"
+git config user.email your@email.example
+
+to check username in a repo do: git config user.name  
+to check user email in a repo do: git config user.email
+to check global username do: git config --global user.name
+to check global user email do: git config --global user.email
+
+add all changes : git add .
+conmmit changes: git commit -m "message"
+push changes (assuming you are on main branch): git push -u origin main 
+
+
+
