@@ -3,6 +3,7 @@ change to a different branch : git checkout -b branchname
 if pull shows error "refusing to merge unrelated histories" then do: git pull --allow-unrelated-histories  origin main #assuming you are pulling to main branch
 to add a new remote: git remote add origin2 git@github.com:User/UserRepo.git
 to set up origin url: git remote set-url origin https://your_token@github.com/username/repositoryname.git
+to get url of remote named origin: git remote show origin // git remote get-url origingit // git config --get remote.origin.url
 set up global username and email: git config --global user.name "Your Name Here"
 git config --global user.email your@email.example
 
@@ -16,8 +17,28 @@ to check global username do: git config --global user.name
 to check global user email do: git config --global user.email
 
 add all changes : git add .
+discard all unstaged changes : git restore .
 conmmit changes: git commit -m "message"
 push changes (assuming you are on main branch): git push -u origin main 
+git restore .
+------
+https://stackoverflow.com/questions/25436312/gitignore-not-working
+git rm -rf --cached . # commit everything you have changed before doing this
+git add .
+
+---------
+Julia package specific. 
+If package docs are not deployed and you need to trigger Documenter, you can create and push tag (with metadata) as
+git tag -a v2.0.0+docs -m "message"
+git push origin v2.0.0+docs
+here v2.0.0+docs is a git tag whereas documenter will only look at v2.0.0 and get triggered to deploy docs for version 2.0.0
+See https://documenter.juliadocs.org/stable/man/hosting/ for more details. Specifically section "Fixing broken release deployments" on that page.
+------
+
+
+
+
+
 
 
 
